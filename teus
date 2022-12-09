@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# A way to compile TypeScript base projects for ZeppOS.
+
+# Remove any existing output files.
+rm -rf ./dist
+
+# Compile our TypeScript files.
+tsc
+
+# Copy our necessary project files, but remove the TypeScript source code.
+cp -r src/* dist/
+find dist/ -type f -name '*.ts' -delete
